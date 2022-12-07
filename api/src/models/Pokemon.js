@@ -18,37 +18,49 @@ module.exports = (sequelize) => {
     image: {
       type: DataTypes.STRING,
       defaultValue:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/800px-Pokebola-pokeball-png-0.png',
+      allowNull: true,
     },
     hp: {
       type: DataTypes.INTEGER,
       defaultValue: 10,
       validate: { min: 1 },
+      allowNull: true,
     },
     attack: {
       type: DataTypes.INTEGER,
       defaultValue: 10,
       validate: { min: 1 },
+      allowNull: true,
     },
     defense: {
       type: DataTypes.INTEGER,
       defaultValue: 10,
       validate: { min: 1 },
+      allowNull: true,
     },
     speed: {
       type: DataTypes.INTEGER,
       defaultValue: 10,
       validate: { min: 1 },
+      allowNull: true,
     },
     height: {
       type: DataTypes.INTEGER,
       defaultValue: 10,
       validate: { min: 1 },
+      allowNull: true,
     },
     weight: {
       type: DataTypes.INTEGER,
       defaultValue: 10,
       validate: { min: 1 },
+      allowNull: true,
     },
+    cretedInDb:{
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    }
   },
   { timestamps: false }
 );
