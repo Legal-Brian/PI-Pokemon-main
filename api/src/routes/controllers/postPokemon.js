@@ -22,13 +22,13 @@ const postPokemon = async (name, hp, attack, defense, speed, height, weight, typ
             weight,
         });
         const allTypes = await getTypes();
-        const type = await types.forEach(async el =>{
+        await types.forEach(async el =>{
             await allTypes 
             await pokemon.addType(await Type.findAll({
                 where: {name: el.name}
             }));
         });
-        return {info: "Pokemon creado con exito"};
+        return "Pokemon creado con exito";
     }
 }
 
