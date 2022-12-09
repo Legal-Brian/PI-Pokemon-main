@@ -21,38 +21,26 @@ module.exports = (sequelize) => {
     },
     hp: {
       type: DataTypes.INTEGER,
-      defaultValue: 10,
-      validate: { min: 1 },
       allowNull: true,
     },
     attack: {
       type: DataTypes.INTEGER,
-      defaultValue: 10,
-      validate: { min: 1 },
       allowNull: true,
     },
     defense: {
       type: DataTypes.INTEGER,
-      defaultValue: 10,
-      validate: { min: 1 },
       allowNull: true,
     },
     speed: {
       type: DataTypes.INTEGER,
-      defaultValue: 10,
-      validate: { min: 1 },
       allowNull: true,
     },
     height: {
       type: DataTypes.INTEGER,
-      defaultValue: 10,
-      validate: { min: 1 },
       allowNull: true,
     },
     weight: {
       type: DataTypes.INTEGER,
-      defaultValue: 10,
-      validate: { min: 1 },
       allowNull: true,
     },
   },
