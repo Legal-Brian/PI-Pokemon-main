@@ -56,11 +56,6 @@ module.exports = (sequelize) => {
       validate: { min: 1 },
       allowNull: true,
     },
-    cretedInDb:{
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true,
-    },
   },
   { timestamps: false }
 );
