@@ -44,8 +44,8 @@ const getDbPokemon = async () => {
       model: Type,
     },
   });
-  const pokemonDb = pokemonsDb.map((pokemon) => {
-    const result = pokemon.toJSON();
+  const pokemonDb = await pokemonsDb.map((pokemon) => {
+    const result =  pokemon.toJSON();
     return {
       ...result,
       types: result.types.map((type) => type.name),
