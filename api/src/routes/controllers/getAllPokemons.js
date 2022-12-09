@@ -1,5 +1,5 @@
 const { Pokemon, Type } = require("../../db");
-const fetch = require("node-fetch")
+const fetch = require("node-fetch");
 
 const getApiPokemon = async () => {
   const search = async(url) => {
@@ -27,11 +27,11 @@ const getApiPokemon = async () => {
             types: x.types.map((t) => t.type.name),
           };
         });
-      })
+      });
     aux.next = data.next
-    })
+    });
     return aux
-  }
+  };
   const firstTwenty = await search("https://pokeapi.co/api/v2/pokemon");
   const secondTwenty = await search(firstTwenty.next);
   const apiConcat = await firstTwenty.pokemon.concat(secondTwenty.pokemon);
@@ -55,15 +55,14 @@ const getDbPokemon = async () => {
 };
 
 const getAllPokemon = async () => {
-    const apiPokemon = await getApiPokemon();
-    const dbPokemon = await getDbPokemon();
-    const pokemon = dbPokemon.concat(apiPokemon);
-    return pokemon;
-  };
-
+  const apiPokemon = await getApiPokemon();
+  const dbPokemon = await getDbPokemon();
+  const pokemon = dbPokemon.concat(apiPokemon);
+  return pokemon;
+};
 
 module.exports = {
   getAllPokemon,
   getApiPokemon,
   getDbPokemon,
-} 
+}
