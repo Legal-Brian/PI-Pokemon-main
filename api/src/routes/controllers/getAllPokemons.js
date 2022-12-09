@@ -1,4 +1,4 @@
-const { Pokemon, Type } = require("../../db");
+const { Pokemon , Type } = require("../../db");
 const fetch = require("node-fetch");
 
 const getApiPokemon = async () => {
@@ -65,4 +65,4 @@ module.exports = {
   getAllPokemon,
   getApiPokemon,
   getDbPokemon,
-}
+};

@@ -2,7 +2,7 @@ const { Router } = require("express");
 const { getAllPokemon } = require("./controllers/getAllPokemons");
 const getPokemonByName = require("./controllers/getPokemonByName");
 const getPokemonById = require("./controllers/getPokemonById");
-const postPokemon = require("./controllers/postPokemon")
+const postPokemon = require("./controllers/postPokemon");
 
 const router = Router();
 
@@ -15,10 +15,10 @@ router.get("/", async (req, res) => {
         }else{
             const getAll = await getAllPokemon();
             res.status(200).json(getAll);
-        }
+        };
     } catch (error) {
-        res.status(404).json(error.message)
-    }
+        res.status(404).json(error.message);
+    };
 });
   
 router.get("/:id", async (req, res) => {
@@ -34,11 +34,10 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
     try {
         const { name, hp, attack, defense, speed, height, weight, types, image } = req.body;
-        res.status(200).json(await postPokemon( name, hp, attack, defense, speed, height, weight, types, image))
+        res.status(200).json(await postPokemon( name, hp, attack, defense, speed, height, weight, types, image));
     } catch (error) {
-        res.status(404).json(error.message)
-    }
+        res.status(404).json(error.message);
+    };
 });
-  
 
 module.exports = router;

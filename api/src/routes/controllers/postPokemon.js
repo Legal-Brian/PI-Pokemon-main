@@ -40,13 +40,13 @@ const postPokemon = async (name, hp, attack, defense, speed, height, weight, typ
                         where: {name: el.name}
                     }));
                 });
-            }
+            };
             return "Pokemon successfully created";
-        }
+        };
     }
     catch (error){
         return(error.message);
-    }
-}
+    };
+};
 
 module.exports = postPokemon;
