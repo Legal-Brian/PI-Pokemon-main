@@ -2,6 +2,7 @@ const fetch = require("node-fetch")
 const { Pokemon , Type } = require("../../db");
 
 const getPokemonByName = async (name) => {
+  try {
     const db = await Pokemon.findOne({
       where: {
         name: name,
@@ -43,6 +44,9 @@ const getPokemonByName = async (name) => {
       ];
       return pokemonName;
     }
+  } catch (error) {
+    throw new Error("Pokemon not found");
+  }
 };
 
 module.exports = getPokemonByName;
