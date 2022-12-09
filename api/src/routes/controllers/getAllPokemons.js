@@ -11,7 +11,6 @@ const getApiPokemon = async () => {
       pokemonInfo.push({
         id: info.id,
         name: info.name,
-        type: info.types.map((t) => t.type.name),
         image: info.sprites.other["official-artwork"].front_default,
         hp: info.stats[0].base_stat,
         attack: info.stats[1].base_stat,
@@ -19,6 +18,7 @@ const getApiPokemon = async () => {
         speed: info.stats[5].base_stat,
         height: info.height,
         weight: info.weight,
+        types: info.types.map((t) => t.type.name),
       });
   }
   return pokemonInfo;
