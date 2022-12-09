@@ -28,8 +28,6 @@ const postPokemon = async (name, hp, attack, defense, speed, height, weight, typ
                 where: {name: el.name}
             }));
         });
-        console.log(type)
-        
         return {info: "Pokemon creado con exito"};
     }
 }

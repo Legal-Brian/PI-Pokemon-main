@@ -21,7 +21,6 @@ const getPokemonById = async (id) => {
     return pokemonId;
   }else{
       const db = await Pokemon.findByPk(id, { include: Type });
-      console.log(db)
       const pokemonDb = [{
         id: db.id,
         name: db.name,
