@@ -11,7 +11,7 @@ const getApiPokemon = async () => {
     })
     .then(async (data) => {
       await Promise.all(
-        data.urls.map((x) => fetch(x).then((res)=> res.json()).catch(err =>{throw new Error(err.message)}))
+        data.urls.map((x) => fetch(x).then((res)=> res.json()))
       ).then((data)=>{
         aux.pokemon = data.map((x)=>{
           return {
@@ -27,13 +27,8 @@ const getApiPokemon = async () => {
             types: x.types.map((t) => t.type.name),
           };
         });
-      }).catch(err => {
-        throw new Error(err.message);
-    })
+      })
     aux.next = data.next
-    })
-    .catch((err)=>{
-      throw new Error(err.message);
     })
     return aux
   }
