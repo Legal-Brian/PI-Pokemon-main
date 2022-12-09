@@ -1,18 +1,24 @@
 const { Pokemon , Type } = require("../../db");
-const getTypes = require("./getTypes")
+const getTypes = require("./getTypes");
 
 const postPokemon = async (name, hp, attack, defense, speed, height, weight, types , image,) => {
     try{
         if (!name) {
             throw new Error("Name is required" );
         }
+        if (!hp) hp = 10;
+        if (!attack) attack = 10;
+        if (!defense) defense = 10;
+        if (!speed) speed = 10;
+        if (!height) height = 1;
+        if (!weight) weight = 10;
+        if (!types ) types = [{"name": "normal"}];
+        if (!image) image = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/800px-Pokebola-pokeball-png-0.png";
         
         if (isNaN(hp) || isNaN(attack) || isNaN(defense) || isNaN(speed) || isNaN(height) || isNaN(weight)) throw new Error("Incorrect data type");
         
         else{
-            if (!image) image = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/800px-Pokebola-pokeball-png-0.png"
-            if (!types ) types = [{"name": "normal"}]
-            if (types.length > 2) throw new Error("Can have no more than two types")
+            if (types.length > 2) throw new Error("Can have no more than two types");
             
             const exist = await Pokemon.findOne({ where: { name: name } });
             if (exist) throw new Error("Pokemon already exist");
@@ -39,7 +45,7 @@ const postPokemon = async (name, hp, attack, defense, speed, height, weight, typ
         }
     }
     catch (error){
-        return(error.message)
+        return(error.message);
     }
 }
 
