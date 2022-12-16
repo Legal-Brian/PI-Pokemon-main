@@ -1,9 +1,9 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemons } from "../../actions/index";
 import { Link } from "react-router-dom";
-import Card from "../Card/Card"
+import { getPokemons } from "../../actions/index";
+import Card from "../Card/Card";
+import Paginated from "../Paginated/Paginated";
 
 
 const Home = () => {
@@ -17,6 +17,15 @@ const Home = () => {
     const handlerClick = (event) => {
         event.preventDefault();
         dispatch(getPokemons());
+    }
+    
+    const [currentPage, setCurrentPage] = useState(1);
+    const [pokemonsPerPage, setPokemonsPerPage] = useState(12);
+    const indexOfLastPokemon = currentPage * pokemonsPerPage;
+    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
+    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon)
+    const paginated = (pageNumber) => {
+        setCurrentPage(pageNumber);
     }
 
     return(
@@ -57,10 +66,11 @@ const Home = () => {
                 <option value="created">Created</option>
                 <option value="existing">Existing</option>
                 </select>
+                <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
                 {
-                    allPokemons?.map(ele => {
+                    currentPokemons?.map(ele => {
                         return(
-                            <fragment>
+                            <fragment className="container" >
                                 <Link to={"/home" + ele.id}>
                                 <Card name={ele.name} image={ele.image} types={ele.types}/>
                                 </Link>
@@ -68,6 +78,7 @@ const Home = () => {
                         )
                     })
                 }
+                <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
             </div>
         </div>
     )
