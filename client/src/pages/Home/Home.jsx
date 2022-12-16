@@ -1,9 +1,10 @@
 import React, { useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
 import { getPokemons, filterPokemonsByType, getTypes, filterCreated, orderByName, orderByAttack} from "../../actions/index";
-import Card from "../Card/Card";
-import Paginated from "../Paginated/Paginated";
+import Card from "../../components/Card/Card";
+import Paginated from "../../components/Paginated/Paginated";
 
 
 const Home = () => {
