@@ -43,6 +43,11 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+    createInDb: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    }
   },
   { timestamps: false }
 );
