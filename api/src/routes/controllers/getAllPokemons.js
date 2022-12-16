@@ -57,7 +57,7 @@ const getDbPokemon = async () => {
 const getAllPokemon = async () => {
   const apiPokemon = await getApiPokemon();
   const dbPokemon = await getDbPokemon();
-  const pokemon = dbPokemon.concat(apiPokemon);
+  const pokemon = apiPokemon.concat(dbPokemon);
   return pokemon;
 };
 
