@@ -53,27 +53,49 @@ const rootReducer = (state = inicialState, action) => {
                 ...state,
                 pokemons: sortedName
             }
-            case "ORDER_BY_ATTACK":
-                const sortedArr = action.payload === "minor attack" ? state.pokemons.sort(function(a,b){
-                    if (a.attack > b.attack){
+        case "ORDER_BY_ATTACK":
+            const sortedAttack = action.payload === "minor attack" ? state.pokemons.sort(function(a,b){
+                if (a.attack > b.attack){
+                    return 1
+                }
+                if (b.attack > a.attack){
+                    return -1
+                }
+                return 0;
+            }) : state.pokemons.sort(function(a,b){
+                if (a.attack > b.attack){
+                    return -1
+                }
+                if (b.attack > a.attack){
+                    return 1
+                }
+                return 0
+            })
+            return {
+                ...state,
+                pokemons: sortedAttack
+            }
+        case "ORDER_BY_ID":
+                const sortedId = action.payload === "minor id" ? state.pokemons.sort(function(a,b){
+                    if (a.id > b.id){
                         return 1
                     }
-                    if (b.attack > a.attack){
+                    if (b.id > a.id){
                         return -1
                     }
                     return 0;
                 }) : state.pokemons.sort(function(a,b){
-                    if (a.attack > b.attack){
+                    if (a.id > b.id){
                         return -1
                     }
-                    if (b.attack > a.attack){
+                    if (b.id > a.id){
                         return 1
                     }
                     return 0
                 })
                 return {
                     ...state,
-                    pokemons: sortedArr
+                    pokemons: sortedId
                 }
         default:
             return state;

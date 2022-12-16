@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { getPokemons, filterPokemonsByType, getTypes, filterCreated, orderByName, orderByAttack} from "../../redux/actions/index";
+import { getPokemons, filterPokemonsByType, getTypes, filterCreated, orderByName, orderByAttack, orderById } from "../../redux/actions/index";
 import Card from "../../components/Card/Card";
 import Paginated from "../../components/Paginated/Paginated";
 
@@ -25,6 +25,8 @@ const Home = () => {
     const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon)
     const [ordenByName, setOrdenByName] = useState("");
     const [ordenByAttack, setOrdenByAttack] = useState("");
+    const [ordenById, setOrdenById] = useState("");
+
 
     const paginated = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -57,12 +59,22 @@ const Home = () => {
         setCurrentPage(1);
         setOrdenByAttack(`Ordenado ${event.target.value}`)
     }
+    const handleOrderedById = (event) => {
+        event.preventDefault();
+        dispatch(orderById(event.target.value));
+        setCurrentPage(1);
+        setOrdenById(`Ordenado ${event.target.value}`)
+    }
     return(
         <div>
             <Link to="/pokemon">Create Pokemon</Link>
             <h1>Pokedex</h1>
             <div>
                 <button onClick={e=>{handlerClick(e)}}>Restore</button>
+                <select onChange={e => handleOrderedById(e)}>
+                    <option value="minor id">Minor Id</option>
+                    <option value="biggest id">Biggest Id</option>
+                </select>
                 <select onChange={e => handleOrderedByName(e)}>
                     <option value="ascendant">Ascendant</option>
                     <option value="descendant">Descendant</option>

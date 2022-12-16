@@ -47,3 +47,10 @@ export const orderByAttack = (payload) => {
         payload,
     }
 };
+
+export const orderById = (payload) => {
+    return {
+        type: "ORDER_BY_ID",
+        payload,
+    }
+};
