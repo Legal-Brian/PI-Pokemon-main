@@ -1,4 +1,4 @@
-const { Pokemon , Type } = require("../../db");
+const { Pokemon , Type } = require("../db");
 const getTypes = require("./getTypes");
 
 const postPokemon = async (name, hp, attack, defense, speed, height, weight, types , image,) => {
