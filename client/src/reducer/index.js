@@ -1,6 +1,8 @@
 
 const inicialState = {
-    pokemons : []
+    pokemons : [],
+    allPokemons: [],
+    types: []
 }
 
 const rootReducer = (state = inicialState, action) => {
@@ -9,9 +11,23 @@ const rootReducer = (state = inicialState, action) => {
             return{
                 ...state,
                 pokemons: action.payload,
+                allPokemons: action.payload,
             }
-            default:
-                return state;
+        case "GET_TYPES":
+            return{
+                ...state,
+                types: action.payload
+            }
+        case "FILTER_BY_TYPE":
+            const allPokemons = state.allPokemons;
+            const typeFiltered = action.payload === "all" ? allPokemons : allPokemons.filter(el => el.types.find(el => el === action.payload));
+            return{
+                ...state,
+                pokemons: typeFiltered,
+            }
+            
+        default:
+            return state;
     }
 };
 
