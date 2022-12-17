@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
 import { getPokemons, filterPokemonsByType, getTypes, filterCreated, orderByName, orderByAttack, orderById } from "../../redux/actions/index";
 import Card from "../../components/Card/Card";
 import Paginated from "../../components/Paginated/Paginated";
@@ -12,7 +11,6 @@ const Home = () => {
     const allPokemons = useSelector((state) => state.pokemons);
     const allTypes = useSelector((state) => state.types)
 
-
     useEffect(()=>{
         dispatch(getPokemons());
         dispatch(getTypes())
@@ -22,12 +20,7 @@ const Home = () => {
     const [pokemonsPerPage, setPokemonsPerPage] = useState(12);
     const indexOfLastPokemon = currentPage * pokemonsPerPage;
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
-    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon)
-    const [ordenByName, setOrdenByName] = useState("");
-    const [ordenByAttack, setOrdenByAttack] = useState("");
-    const [ordenById, setOrdenById] = useState("");
-
-
+    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);
     const paginated = (pageNumber) => {
         setCurrentPage(pageNumber);
     }
@@ -46,25 +39,31 @@ const Home = () => {
         event.preventDefault()
         dispatch(filterCreated(event.target.value));
     }
-    
+
+    const [ordenByName, setOrdenByName] = useState("");
     const handleOrderedByName = (event) => {
         event.preventDefault();
         dispatch(orderByName(event.target.value));
         setCurrentPage(1);
         setOrdenByName(`Ordenado ${event.target.value}`)
     }
+
+    const [ordenByAttack, setOrdenByAttack] = useState("");
     const handleOrderedByAttack = (event) => {
         event.preventDefault();
         dispatch(orderByAttack(event.target.value));
         setCurrentPage(1);
         setOrdenByAttack(`Ordenado ${event.target.value}`)
     }
+
+    const [ordenById, setOrdenById] = useState("");
     const handleOrderedById = (event) => {
         event.preventDefault();
         dispatch(orderById(event.target.value));
         setCurrentPage(1);
         setOrdenById(`Ordenado ${event.target.value}`)
     }
+
     return(
         <div>
             <Link to="/pokemon">Create Pokemon</Link>
@@ -95,17 +94,15 @@ const Home = () => {
                     <option value="existing">Existing</option>
                 </select>
                 <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
-                    {
-                    currentPokemons?.map(ele => {
-                        return(
-                            <fragment className="container" >
-                                <Link to={"/home" + ele.id}>
-                                <Card name={ele.name} image={ele.image} types={ele.types}/>
-                                </Link>
-                            </fragment>
-                        )
-                    })
-                    }
+                {currentPokemons?.map(ele => {
+                    return(
+                        <fragment className="container" >
+                            <Link to={"/home" + ele.id}>
+                            <Card name={ele.name} image={ele.image} types={ele.types}/>
+                            </Link>
+                        </fragment>
+                    )
+                })}
                 <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
             </div>
         </div>
