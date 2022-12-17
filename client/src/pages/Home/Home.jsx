@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { getPokemons, filterPokemonsByType, getTypes, filterCreated, orderByName, orderByAttack, orderById } from "../../redux/actions/index";
 import Card from "../../components/Card/Card";
 import Paginated from "../../components/Paginated/Paginated";
-import { Navbar } from "../../components/NavBar/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -66,9 +67,9 @@ const Home = () => {
 
     return(
         <div>
-            <Navbar></Navbar>
             <div>
-                
+            <NavBar></NavBar>
+            <SearchBar></SearchBar>
                 <button onClick={e=>{handlerClick(e)}}>Restore</button>
                 <select onChange={e => handleOrderedById(e)}>
                     <option value="minor id">Minor Id</option>
