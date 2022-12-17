@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "../SearchBar/SearchBar";
 import image from "./Pokemon.png"
 
-export const Navbar = () => {
+const NavBar = () => {
   return (
     <div>
       <header>
@@ -12,14 +11,10 @@ export const Navbar = () => {
           <img src={image}/>
             </div>
         </Link>
-        <button>
-        <Link to="/home">Pokedex</Link>
-        </button>
-        <button>
-        <Link to="/create">Create</Link>
-        </button>
-        <SearchBar></SearchBar>
+        <Link to="/home"><button>Pokedex</button></Link>
+        <Link to="/pokemons"><button>Create</button></Link>
       </header>
     </div>
   );
 };
+export default NavBar
