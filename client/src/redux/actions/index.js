@@ -69,3 +69,10 @@ export const getNamePokemon = (name) => {
         }
     }
 }
+
+export const postPokemon = (payload) => {
+    return async (dispatch) => {
+        const json = await axios.post("http://localhost:3001/pokemons",payload);
+        return json;
+    }
+}
