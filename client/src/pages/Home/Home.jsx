@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { getPokemons, filterPokemonsByType, getTypes, filterCreated, orderByName, orderByAttack, orderById } from "../../redux/actions/index";
 import Card from "../../components/Card/Card";
 import Paginated from "../../components/Paginated/Paginated";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import { Navbar } from "../../components/NavBar/NavBar";
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -66,8 +66,7 @@ const Home = () => {
 
     return(
         <div>
-            <Link to="/pokemon">Create Pokemon</Link>
-            <h1>Pokedex</h1>
+            <Navbar></Navbar>
             <div>
                 
                 <button onClick={e=>{handlerClick(e)}}>Restore</button>
@@ -95,7 +94,6 @@ const Home = () => {
                     <option value="existing">Existing</option>
                 </select>
                 <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
-                <SearchBar></SearchBar>
                 {currentPokemons?.map(ele => {
                     return(
                         <fragment className="container" >
