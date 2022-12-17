@@ -54,3 +54,18 @@ export const orderById = (payload) => {
         payload,
     }
 };
+
+export const getNamePokemon = (name) => {
+    return async (dispatch) => {
+        try {
+            const json = await axios.get(`http://localhost:3001/pokemons?name=${name}`);
+            return dispatch({
+                type: "GET_NAME_POKEMON",
+                payload: json.data
+            })
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
+}
