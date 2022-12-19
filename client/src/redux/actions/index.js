@@ -76,3 +76,13 @@ export const postPokemon = (payload) => {
         return json;
     }
 }
+
+export const getDetails = (id) => {
+    return async (dispatch) => {
+        const json = await axios.get(`http://localhost:3001/pokemons/${id}`);
+        return dispatch({
+            type: "GET_DETAILS",
+            payload: json.data
+        });
+    }
+}
