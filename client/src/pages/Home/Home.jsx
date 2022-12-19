@@ -98,7 +98,7 @@ const Home = () => {
                 {currentPokemons?.map(ele => {
                     return(
                         <fragment className="container" >
-                            <Link to={"/home" + ele.id}>
+                            <Link to={`/pokedex/${ele.id}`}>
                             <Card name={ele.name} image={ele.image} types={ele.types}/>
                             </Link>
                         </fragment>
