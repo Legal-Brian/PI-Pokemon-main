@@ -17,6 +17,7 @@ const Detail = (props) => {
             {myPokemon.length > 0 ? 
             <div>
                 <h1>Name: {myPokemon[0].name}</h1>
+                <h2>Id: {myPokemon[0].id}</h2>
                 <h3>Types: {myPokemon[0].types.map(ele => <li>{ele}</li>)}</h3>
                 <img src={myPokemon[0].image}/>
                 <h3>HP: {myPokemon[0].hp}</h3>
