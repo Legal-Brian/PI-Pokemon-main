@@ -24,8 +24,8 @@ const Detail = (props) => {
                 <h3>Attack: {myPokemon[0].attack}</h3>
                 <h3>Defense: {myPokemon[0].defense}</h3>
                 <h3>Speed: {myPokemon[0].speed}</h3>
-                <h3>Height: {myPokemon[0].height}</h3>
-                <h3>Weight: {myPokemon[0].weight}</h3>
+                <h3>Height: {(myPokemon[0].height / 10).toFixed(1) + "m"}</h3>
+                <h3>Weight: {(myPokemon[0].weight / 10).toFixed(1) + "kg"}</h3>
             </div> : <p>Loading...</p>
             }
         </div>
