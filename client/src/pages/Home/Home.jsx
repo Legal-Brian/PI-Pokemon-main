@@ -5,7 +5,6 @@ import { getPokemons, filterPokemonsByType, getTypes, filterCreated, orderByName
 import Card from "../../components/Card/Card";
 import Paginated from "../../components/Paginated/Paginated";
 import NavBar from "../../components/NavBar/NavBar";
-import SearchBar from "../../components/SearchBar/SearchBar";
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -69,7 +68,6 @@ const Home = () => {
         <div>
             <div>
             <NavBar></NavBar>
-            <SearchBar></SearchBar>
                 <button onClick={e=>{handlerClick(e)}}>Restore</button>
                 <select onChange={e => handleOrderedById(e)}>
                     <option value="minor id">Minor Id</option>
