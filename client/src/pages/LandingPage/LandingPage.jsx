@@ -7,7 +7,7 @@ const LandingPage = () => {
         <div className={style.container}>
             <h1 className={style.welcome}>Welcome to the Pokedex</h1>
             <Link to="/home">
-                <button className={style.button}>Enter</button>
+                <button className={style.enter}>Enter</button>
             </Link>
         </div>
     )
