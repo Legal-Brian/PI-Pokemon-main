@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import style from './NavBar.module.css';
 import SearchBar from "../SearchBar/SearchBar";
+import image from "./logo.png"
 
 
-const NavBar = () => {
-    const image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pokémon_logo.svg/640px-International_Pokémon_logo.svg.png";  
+const NavBar = () => { 
     return (
         <nav className={style.nav}>
             <Link to='/'>
