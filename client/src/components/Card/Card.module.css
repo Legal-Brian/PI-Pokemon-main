@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "PokemonSolid";
+  src: local("PokemonSolid"), url("../../fonts/PokemonSolid.ttf") format("truetype");
+}
+
+.container{
+  float: left;
+}
+
+.card{
+  margin: 13px; 
+  width: 300px;
+  border-radius: 50px;
+  background: #5254D8
+}
+
+.cardName{
+  margin: 5px;
+  color: white;
+  font-family: "PokemonSolid";
+  font-size: 25px;
+  letter-spacing: 6px;
+}
+
+.pokemonImg {
+  margin: 1px;
+  height: 250px;
+}
+.cardImageContainer {
+  text-align: center;
+}
+.types {
+  display: flex;
+  justify-content: space-around;
+}
+.cardType {
+  font-family: "PokemonSolid";
+  font-size: 15px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: white;
+  background: #000278;
+  padding: 1em;
+  line-height: 5px;
+  border-radius: 20px;
+  margin: 20px;
+  }
