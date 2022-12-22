@@ -5,6 +5,7 @@ import { getPokemons, filterPokemonsByType, getTypes, filterCreated, orderByName
 import Card from "../../components/Card/Card";
 import Paginated from "../../components/Paginated/Paginated";
 import NavBar from "../../components/NavBar/NavBar";
+import style from "./Home.module.css"
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -66,33 +67,38 @@ const Home = () => {
 
     return(
         <div>
-            <div>
             <NavBar></NavBar>
-                <button onClick={e=>{handlerClick(e)}}>Restore</button>
-                <select onChange={e => handleOrderedById(e)}>
+            <div className={style.container}>
+            <div className={style.filters}>
+                <button className={style.restore} onClick={e=>{handlerClick(e)}}>Restore</button>
+                <select  className={style.select} onChange={e => handleOrderedById(e)}>
                     <option value="minor id">Minor Id</option>
                     <option value="biggest id">Biggest Id</option>
                 </select>
-                <select onChange={e => handleOrderedByName(e)}>
+                <select  className={style.select} onChange={e => handleOrderedByName(e)}>
                     <option value="ascendant">Ascendant</option>
                     <option value="descendant">Descendant</option>
                 </select>
-                <select onChange={e => handleOrderedByAttack(e)}>
+                <select  className={style.select} onChange={e => handleOrderedByAttack(e)}>
                     <option value="biggest attack">Biggest Attack</option>
                     <option value="minor attack">Minor Attack</option>
                 </select>
-                <select onChange={e => handleFilterType(e)}>
+                <select  className={style.select} onChange={e => handleFilterType(e)}>
                     <option value="all">All</option>
                     {allTypes?.map((ele) => (
                     <option value={ele.name}>{ele.name[0].toUpperCase()+ele.name.slice(1)}</option>
                     ))}
                 </select>
-                <select onChange={e => handleFilterCreated(e)}>
+                <select  className={style.select} onChange={e => handleFilterCreated(e)}>
                     <option value="all">All</option>
                     <option value="created">Created</option>
                     <option value="existing">Existing</option>
                 </select>
+                </div>
+                <div>
                 <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
+                </div>
+                <div>
                 {currentPokemons?.map(ele => {
                     return(
                         <fragment className="container" >
@@ -102,7 +108,10 @@ const Home = () => {
                         </fragment>
                     )
                 })}
+                </div>
+                <div>
                 <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
+                </div>
             </div>
         </div>
     )
