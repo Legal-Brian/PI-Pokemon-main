@@ -4,10 +4,10 @@ import style from "./LandingPage.module.css";
 
 const LandingPage = () => {
     return(
-        <div className={style.container}>
+        <div>
             <h1 className={style.welcome}>Welcome to the Pokedex</h1>
             <Link to="/home">
-                <button className={style.enter}>Enter</button>
+                <button className={style.enterButton}>Enter</button>
             </Link>
         </div>
     )

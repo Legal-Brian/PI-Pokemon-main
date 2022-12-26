@@ -3,7 +3,13 @@
     src: local("PokemonSolid"), url("../../fonts/PokemonSolid.ttf") format("truetype");
 }
 
-.logo {
+.container{
+    height: 80px;
+    background-color: #400255;
+    position: relative;
+}
+
+.logo{
     height: 80px;
     position: absolute; 
     top: 50%;
@@ -11,13 +17,7 @@
     transform: translate(-70%, -50%);
 }
 
-.nav {
-    height: 80px;
-    background-color: #400255;
-    position: relative;
-}
-
-.create {
+.createButton{
     position: absolute; 
     top: 50%;
     left: 75%;
@@ -39,7 +39,7 @@
     transition: all 0.5s ease;
 }
 
-.create:hover {
+.createButton:hover {
     box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
     background-position: 0 0;
 }

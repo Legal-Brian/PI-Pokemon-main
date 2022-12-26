@@ -69,49 +69,44 @@ const Home = () => {
         <div>
             <NavBar></NavBar>
             <div className={style.container}>
-            <div className={style.filters}>
-                <button className={style.restore} onClick={e=>{handlerClick(e)}}>Restore</button>
-                <select  className={style.select} onChange={e => handleOrderedById(e)}>
-                    <option value="minor id">Minor Id</option>
-                    <option value="biggest id">Biggest Id</option>
-                </select>
-                <select  className={style.select} onChange={e => handleOrderedByName(e)}>
-                    <option value="ascendant">Ascendant</option>
-                    <option value="descendant">Descendant</option>
-                </select>
-                <select  className={style.select} onChange={e => handleOrderedByAttack(e)}>
-                    <option value="biggest attack">Biggest Attack</option>
-                    <option value="minor attack">Minor Attack</option>
-                </select>
-                <select  className={style.select} onChange={e => handleFilterType(e)}>
-                    <option value="all">All</option>
-                    {allTypes?.map((ele) => (
-                    <option value={ele.name}>{ele.name[0].toUpperCase()+ele.name.slice(1)}</option>
-                    ))}
-                </select>
-                <select  className={style.select} onChange={e => handleFilterCreated(e)}>
-                    <option value="all">All</option>
-                    <option value="created">Created</option>
-                    <option value="existing">Existing</option>
-                </select>
+                <div className={style.filters}>
+                    <button className={style.restore} onClick={e=>{handlerClick(e)}}>Restore</button>
+                    <select  className={style.select} onChange={e => handleOrderedById(e)}>
+                        <option value="minor id">Minor Id</option>
+                        <option value="biggest id">Biggest Id</option>
+                    </select>
+                    <select  className={style.select} onChange={e => handleOrderedByName(e)}>
+                        <option value="ascendant">Ascendant</option>
+                        <option value="descendant">Descendant</option>
+                    </select>
+                    <select  className={style.select} onChange={e => handleOrderedByAttack(e)}>
+                        <option value="biggest attack">Biggest Attack</option>
+                        <option value="minor attack">Minor Attack</option>
+                    </select>
+                    <select  className={style.select} onChange={e => handleFilterType(e)}>
+                        <option value="all">All</option>
+                        {allTypes?.map((ele) => (
+                        <option value={ele.name}>{ele.name[0].toUpperCase()+ele.name.slice(1)}</option>
+                        ))}
+                    </select>
+                    <select  className={style.select} onChange={e => handleFilterCreated(e)}>
+                        <option value="all">All</option>
+                        <option value="created">Created</option>
+                        <option value="existing">Existing</option>
+                    </select>
                 </div>
-                <div>
                 <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
-                </div>
-                <div>
+                <div className={style.uwu}>
                 {currentPokemons?.map(ele => {
                     return(
-                        <fragment className="container" >
+                        <div>
                             <Link to={`/pokedex/${ele.id}`}>
                             <Card name={ele.name} image={ele.image} types={ele.types}/>
                             </Link>
-                        </fragment>
-                    )
-                })}
+                        </div>
+                )})}
                 </div>
-                <div>
                 <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
-                </div>
             </div>
         </div>
     )

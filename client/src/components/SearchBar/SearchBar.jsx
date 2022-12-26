@@ -22,12 +22,10 @@ const SearchBar = () => {
     }
 
     return (
-        <div className={style.searchBox}>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <input className={style.searchText} type="text" placeholder="Search Pokemon..." value = {name} onChange={(e) => handleInputChange(e)}/>
-                <button type="submit" className={style.searchButton}>🔍</button>
-            </form>
-        </div>
+        <form className={style.container} onSubmit={(e) => handleSubmit(e)}>
+            <input className={style.searchText} type="text" placeholder="Search Pokemon..." value = {name} onChange={(e) => handleInputChange(e)}/>
+            <button type="submit" className={style.searchButton}>🔍</button>
+        </form>
     )
 }
 

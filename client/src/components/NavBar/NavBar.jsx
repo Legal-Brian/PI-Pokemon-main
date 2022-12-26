@@ -7,12 +7,12 @@ import image from "../../images/logo.png"
 
 const NavBar = () => { 
     return (
-        <nav className={style.nav}>
+        <nav className={style.container}>
             <Link to='/'>
                 <img id="logoPoke" src={image} className={style.logo}/>
             </Link>
             <SearchBar />
-            <Link to="/pokemons"><button className={style.create}>Create</button></Link>
+            <Link to="/pokemons"><button className={style.createButton}>Create</button></Link>
         </nav>
     );
 }

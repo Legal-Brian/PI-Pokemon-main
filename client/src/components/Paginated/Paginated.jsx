@@ -9,11 +9,9 @@ const Paginated = ({pokemonsPerPage, allPokemons, paginated}) => {
     }
     return(
         <nav>
-            <ul className="paginated">
-                {pageNumbers?.map(number => (
-                        <button className={style.paginated} onClick={()=> paginated(number)}>{number}</button>
-                ))}
-            </ul>
+            {pageNumbers?.map(number => (
+                <button className={style.paginated} onClick={()=> paginated(number)}>{number}</button>
+            ))}
         </nav>
     )
 }

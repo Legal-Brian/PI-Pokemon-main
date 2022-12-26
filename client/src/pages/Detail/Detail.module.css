@@ -2,26 +2,24 @@
     font-family: "PokemonSolid";
     src: local("PokemonSolid"), url("../../fonts/PokemonSolid.ttf") format("truetype");
 }
-.container{
+
+.info{
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    margin: 10px;
+    justify-content: space-around;
 }
-.home {
-    position: absolute;
-    top: 10%;
-    left: 1%;
-    transform: translate(0%, 50%);
+
+.buttonHome {
     cursor: pointer;
     border: none;
-    padding: 16px 32px;
+    padding: 14px 28px;
+    margin: 5px;
     font-family: 'PokemonSolid';
     color: #fff;
     -webkit-text-stroke: 2px black;
     font-size: 20px;
     letter-spacing: 4px;
-    line-height: 1;
+    line-height: 20px;
     border-radius: 30px;
     background-image: linear-gradient(45deg, #2D033B 0%, #810CA8 55%, #C147E9 90%);
     background-position: 90% 0;
@@ -30,77 +28,105 @@
     transition: all 0.5s ease;
 }
 
-.home:hover {
+.buttonHome:hover {
     box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
     background-position: 0 0;
 }
-.allData{
-    position: absolute;
-    top: -15%;
-    left: 1%;
-    transform: translate(85%, 40%);
-}
 
-.text{
-    letter-spacing: 7px;
-    font-size: 24px;
-}
-
-.dataContainer{
-    position: absolute;
-    top: -17%;
-    left: 1%;
-    transform: translate(40%, 50%);
-    color: white;
-    background: #810CA8;
-    border-radius: 20px;
-    font-family: "PokemonSolid";
-    -webkit-text-stroke: 2px black;
-    line-height: 30px;
-    border: 10px;
-}
-
-.xd{
-    color: white;
-    background: #810CA8;
-    border-radius: 20px;
-    font-family: "PokemonSolid";
-    -webkit-text-stroke: 2px black;
-    align-items: center;
-    font-size: 24px;
-    line-height: 1.9em;
-    letter-spacing: 7px;
-}
-
-.typexd{
-    color: white;
-    background: #C147E9;
-    border-radius: 20px;
-    font-family: "PokemonSolid";
-    -webkit-text-stroke: 2px black;
-    align-items: center;
-    padding: 10px;
-    line-height: 1em;
-    font-size: 24px;
-    letter-spacing: 7px;
-}
-
+.name,
+.id,
+.hp,
+.attack,
+.defense,
+.speed,
+.height,
+.weight,
 .typesContainer{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100vh;
+    font-family: "PokemonSolid";
     color: white;
+    -webkit-text-stroke: 2px black;
+    font-size: 25px;
     background: #810CA8;
     border-radius: 20px;
-    font-family: "PokemonSolid";
-    -webkit-text-stroke: 2px black;
-    align-items: center;
-    line-height: 0px;
-    font-size: 25px;
-    letter-spacing: 7px;
-    height: 50px;
+    letter-spacing: 5px;
+    height: 45px;
+    width: 90vh;
 }
-img{
-    height: 350px;
+
+.types{
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    align-items: center;
+    padding: 5px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.img{
+    height: 335px;
+}
+
+#normal{
+    background: #828282 ;
+}
+#grass{
+    background: #439937;
+}
+#fire{
+    background: #e5613e;
+}
+#water{
+    background: #309ae2;
+}
+#electric{
+    background: #e0bd28;
+}
+#rock{
+    background: #aaa581;
+}
+#fighting{
+    background: #e5613e;
+}
+#psychic{
+    background: #ea6c8d;
+}
+#ghost{
+    background: #6f4570;
+}
+#poison{
+    background: #9454cc;
+}
+#flying{
+    background: #74abd1;
+}
+#ground{
+    background: #a5733c;
+}
+#dragon{
+    background: #576fbd;
+}
+#ice{
+    background: #47c9c9;
+}
+#bug{
+    background: #a0a028;
+}
+#steel{
+    background: #6badc9;
+}
+#dark{
+    background: #4f4747;
+}
+#fairy{
+    background: #e28de2;
+}
+#shadow{
+    background: #000000;
+}
+#unknown{
+    background: #68a090;
 }
