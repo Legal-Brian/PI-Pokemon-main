@@ -12,7 +12,7 @@ const NavBar = () => {
                 <img id="logoPoke" src={image} className={style.logo}/>
             </Link>
             <SearchBar />
-            <Link to="/pokemons"><button className={style.createButton}>Create</button></Link>
+            <Link to="/create"><button className={style.createButton}>Create</button></Link>
         </nav>
     );
 }
