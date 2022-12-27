@@ -3,6 +3,9 @@
     src: local("PokemonSolid"), url("../../fonts/PokemonSolid.ttf") format("truetype");
 }
 
+.container{
+}
+
 .info{
     display: flex;
     align-items: center;
@@ -22,7 +25,7 @@
     align-items: center;
     text-align: center;
     font-family: "PokemonSolid";
-    color: white;
+    color: #fc5a4a;
     -webkit-text-stroke: 1px black;
     font-size: 25px;
     background: #810CA8;
@@ -37,7 +40,7 @@
     justify-content: space-around;
     align-items: center;
     font-family: "PokemonSolid";
-    color: white;
+    color: #fc5a4a;
     -webkit-text-stroke: 1px black;
     font-size: 15px;
     background: #810CA8;
@@ -52,6 +55,7 @@
     align-items: center;
     border-radius: 20px;
     align-items: center;
+    color: white;
     padding: 5px;
     height: 20px;
     font-size: 20px;

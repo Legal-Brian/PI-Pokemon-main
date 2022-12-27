@@ -3,13 +3,28 @@
     src: local("PokemonSolid"), url("../../fonts/PokemonSolid.ttf") format("truetype");
 }
 
+.container{
+    background-image: url("../../images/LandingBackground.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size: 40%;
+    height: 100vh;
+    background-color: #5c366c;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
 .welcome{
     font-family: 'PokemonSolid';
     font-size: 50px;
     letter-spacing: 5px;
     text-align: 4px;
-    color: #C147E9;
+    color: #fc5a4a;
     -webkit-text-stroke: 2px black;
+    margin: 0;
 }
 
 .enterButton{
@@ -17,7 +32,7 @@
     border: none;
     padding: 16px 32px;
     font-family: 'PokemonSolid';
-    color: #fff;
+    color: #fc5a4a;
     -webkit-text-stroke: 2px black;
     font-size: 20px;
     letter-spacing: 3px;

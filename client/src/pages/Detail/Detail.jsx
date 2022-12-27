@@ -17,7 +17,7 @@ const Detail = (props) => {
     return (
         <div>
             {myPokemon.length > 0 ? 
-            <div>
+            <div className={style.container}>
                 <NavBar/>
                 <div className={style.info} >
 

@@ -4,7 +4,7 @@ import style from "./LandingPage.module.css";
 
 const LandingPage = () => {
     return(
-        <div>
+        <div className={style.container}>
             <h1 className={style.welcome}>Welcome to the Pokedex</h1>
             <Link to="/home">
                 <button className={style.enterButton}>Enter</button>
