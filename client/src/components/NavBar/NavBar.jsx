@@ -11,7 +11,7 @@ const NavBar = () => {
             <Link to='/'>
                 <img id="logoPoke" src={image} className={style.logo}/>
             </Link>
-            <SearchBar />
+            <Link to="/home"><button className={style.homeButton}>Home</button></Link>
             <Link to="/create"><button className={style.createButton}>Create</button></Link>
         </nav>
     );

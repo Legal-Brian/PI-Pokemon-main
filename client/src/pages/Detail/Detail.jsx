@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDetails } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import style from "./Detail.module.css"
+import NavBar from "../../components/NavBar/NavBar"
 
 const Detail = (props) => {
     const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const Detail = (props) => {
         <div>
             {myPokemon.length > 0 ? 
             <div>
-                <Link to="/home"><button className={style.buttonHome}>Home</button></Link>
+                <NavBar/>
                 <div className={style.info} >
 
                     <div className={style.data}>

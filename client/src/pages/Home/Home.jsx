@@ -5,6 +5,7 @@ import { getPokemons, filterPokemonsByType, getTypes, filterCreated, orderByName
 import Card from "../../components/Card/Card";
 import Paginated from "../../components/Paginated/Paginated";
 import NavBar from "../../components/NavBar/NavBar";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import style from "./Home.module.css"
 
 const Home = () => {
@@ -69,6 +70,7 @@ const Home = () => {
         <div>
             <NavBar></NavBar>
             <div className={style.container}>
+                <SearchBar/>
                 <div className={style.filters}>
                     <button className={style.restore} onClick={e=>{handlerClick(e)}}>Restore</button>
                     <select  className={style.select} onChange={e => handleOrderedById(e)}>
