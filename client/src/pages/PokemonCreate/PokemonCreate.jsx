@@ -71,7 +71,7 @@ const PokemonCreate = () => {
     }
 
     return(
-        <div>
+        <div className={style.container}>
             <NavBar/>
             <h1 className={style.title}>Create Pokemon!</h1>
             <form onSubmit={event => handleSubmit(event)}>
