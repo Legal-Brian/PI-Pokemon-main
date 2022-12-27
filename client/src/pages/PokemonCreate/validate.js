@@ -1,7 +1,6 @@
 const validate = (input, pokemons) => {
     const errors = {};
     const RegExpression = /^[a-zA-Z\s]*$/;
-    const regImage = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/);
 
     if(!input.name){
         errors.name = 'A name is required'
@@ -16,12 +15,7 @@ const validate = (input, pokemons) => {
         errors.name = `The name can't be longer than 18 characters`
     }
 
-
-    if(!regImage.test(input.image)){
-        errors.image = `The image must be a URL`
-    }
     
-
     if(input.hp < 1 || input.hp > 255){
         if(input.hp < 1 ){
             errors.hp = 'The life of the Pokemon must be higher than 1'
