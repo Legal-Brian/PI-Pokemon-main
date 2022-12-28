@@ -27,10 +27,22 @@
     left: 1%;
 }
 
-.submitButton{
+.buttonContainer{
     position: absolute;
-    top: 95%;
+    top: 85%;
     left: 63%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+  height: 120px;
+  width: 140px;
+}
+
+.submitButton{
     cursor: pointer;
     border: none;
     padding: 20px 30px;

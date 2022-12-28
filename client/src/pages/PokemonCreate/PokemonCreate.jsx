@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import validate from "./validate";
 import style from "./PokemonCreate.module.css";
 import NavBar from "../../components/NavBar/NavBar"
+import image from "../../images/Create.gif"
 
 const PokemonCreate = () => {
     const dispatch = useDispatch();
@@ -154,7 +155,10 @@ const PokemonCreate = () => {
                     </div>
                     {errors.types ? (<div><span className={style.errors}>{errors.types}</span></div>) :<i></i>}  
                 </div>
-                <button className={style.submitButton} type="submit">Create Pokemon</button> 
+                <div className={style.buttonContainer}>
+                    <img className={style.image} src={image}/>
+                    <button className={style.submitButton} type="submit">Create Pokemon</button> 
+                </div>
             </form> 
         </div>
     )
