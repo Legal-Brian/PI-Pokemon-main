@@ -6,7 +6,7 @@ import style from "./SearchBar.module.css"
 import image from "../../images/SearchBar.png"
 import image2 from "../../images/SearchBar-i.png"
 
-const SearchBar = () => {
+const SearchBar = ({paginated}) => {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
 
@@ -20,6 +20,7 @@ const SearchBar = () => {
         if(name !== ''){
             dispatch(getNamePokemon(name))
             setName("")
+            paginated(1)
         }
     }
 

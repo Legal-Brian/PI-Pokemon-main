@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch} from "react-router-dom";
 
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Home from "./pages/Home/Home";
@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" component={LandingPage}/>
-          <Route path="/home" component={Home}/>
+          <Route exact path="/pokedex" component={Home}/>
           <Route path="/create" component={PokemonCreate}/>
           <Route path="/pokedex/:id" component={Detail}/>
           <Route path="/*" component={Page404} />

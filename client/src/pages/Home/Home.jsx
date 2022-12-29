@@ -34,11 +34,13 @@ const Home = () => {
 
     const handleFilterType = (event) => {
         event.preventDefault()
+        paginated(1)
         dispatch(filterPokemonsByType(event.target.value));
     }
 
     const handleFilterCreated = (event) =>{
         event.preventDefault()
+        paginated(1)
         dispatch(filterCreated(event.target.value));
     }
 
@@ -46,7 +48,7 @@ const Home = () => {
     const handleOrderedByName = (event) => {
         event.preventDefault();
         dispatch(orderByName(event.target.value));
-        setCurrentPage(1);
+        paginated(1)
         setOrdenByName(`Ordenado ${event.target.value}`)
     }
 
@@ -54,7 +56,7 @@ const Home = () => {
     const handleOrderedByAttack = (event) => {
         event.preventDefault();
         dispatch(orderByAttack(event.target.value));
-        setCurrentPage(1);
+        paginated(1);
         setOrdenByAttack(`Ordenado ${event.target.value}`)
     }
 
@@ -62,7 +64,7 @@ const Home = () => {
     const handleOrderedById = (event) => {
         event.preventDefault();
         dispatch(orderById(event.target.value));
-        setCurrentPage(1);
+        paginated(1);
         setOrdenById(`Ordenado ${event.target.value}`)
     }
 
@@ -70,7 +72,7 @@ const Home = () => {
         <div>
             <NavBar></NavBar>
             <div className={style.container}>
-                <SearchBar/>
+                <SearchBar paginated={paginated}/>
                 <div className={style.filters}>
                     <button className={style.restore} onClick={e=>{handlerClick(e)}}>Restore</button>
                     <select  className={style.select} onChange={e => handleOrderedById(e)}>
