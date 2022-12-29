@@ -17,7 +17,7 @@ const Home = () => {
         dispatch(getPokemons());
         dispatch(getTypes())
     },[dispatch]);
-    
+
     const [currentPage, setCurrentPage] = useState(1);
     const [pokemonsPerPage, setPokemonsPerPage] = useState(12);
     const indexOfLastPokemon = currentPage * pokemonsPerPage;
