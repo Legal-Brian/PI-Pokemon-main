@@ -3,6 +3,11 @@
   src: local("PokemonSolid"), url("../../fonts/PokemonSolid.ttf") format("truetype");
 }
 
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
 .filters{
   border-radius: 24px;
   background:#C147E9;

@@ -97,8 +97,8 @@ const Home = () => {
                         <option value="existing">Existing</option>
                     </select>
                 </div>
-                <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
-                <div className={style.uwu}>
+                <Paginated currentPage={currentPage} pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
+                <div>
                 {currentPokemons?.map(ele => {
                     return(
                         <div>
@@ -108,7 +108,7 @@ const Home = () => {
                         </div>
                 )})}
                 </div>
-                <Paginated pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
+                <Paginated currentPage={currentPage} pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
             </div>
         </div>
     )
