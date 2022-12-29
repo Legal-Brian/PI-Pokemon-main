@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "PokemonSolid";
+    src: local("PokemonSolid"), url("../../fonts/PokemonSolid.ttf") format("truetype");
+}
+
+.container{
+    flex-direction: column;
+}
+
+.error404{
+    font-family: 'PokemonSolid';
+    font-size: 50px;
+    letter-spacing: 5px;
+    text-align: 4px;
+    color: #fc5a4a;
+    -webkit-text-stroke: 2px black;
+    margin: 0;
+}
+
+.notFound{
+    font-family: 'PokemonSolid';
+    font-size: 30px;
+    letter-spacing: 5px;
+    text-align: 4px;
+    color: #fc5a4a;
+    -webkit-text-stroke: 2px black;
+    margin: 0;
+}
+
+.image{
+    height: 250px;
+}
