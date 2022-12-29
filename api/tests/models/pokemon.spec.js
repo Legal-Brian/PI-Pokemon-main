@@ -17,7 +17,38 @@ describe('Pokemon models', () => {
     beforeEach(() => Pokemon.sync({ force: true }));
     describe('Modelo Pokemon', () => {
 
-      it('debe devolver un error si no tiene nombre', async () => {
+      it("debe tener una propiedad name", async () => {
+        const pokemon = await Pokemon.create({ name: "Messi" });
+        expect(pokemon).to.have.property("name");
+      });
+      it("debe tener una propiedad hp", async () => {
+        const pokemon = await Pokemon.create({ name: "Messi" , hp: 10 });
+        expect(pokemon).to.have.property("hp"); 
+      });
+      it("debe tener una propiedad attack", async () => {
+        const pokemon = await Pokemon.create({ name: "Messi" , attack: 10 });
+        expect(pokemon).to.have.property("attack");
+      });
+      it("debe tener una propiedad defense", async () => {
+        const pokemon = await Pokemon.create({ name: "Messi" , defense: 10 });
+        expect(pokemon).to.have.property("defense");
+      });
+      it("debe tener una propiedad speed", async () => {
+        const pokemon = await Pokemon.create({ name: "Messi" , speed: 10 });
+        expect(pokemon).to.have.property("speed");
+      });
+      it("debe tener una propiedad height", async () => {
+        const pokemon = await Pokemon.create({ name: "Messi" , height: 10 });
+        expect(pokemon).to.have.property("height");
+      });
+      it("debe tener una propiedad weight", async () => {
+        const pokemon = await Pokemon.create({ name: "Messi" , weight: 10 });
+        expect(pokemon).to.have.property("weight");
+      });
+
+
+
+      it('debe devolver un error si no tiene name', async () => {
         var poke = async () => await Pokemon.create({})
         expect(poke()).to.be.rejected
       });
