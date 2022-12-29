@@ -3,14 +3,6 @@
     src: local("PokemonSolid"), url("../../fonts/PokemonSolid.ttf") format("truetype");
 }
 
-.container{
-  background: url("../../images/Background.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  height: 120vh;
-}
-
 .title{
     position: absolute;
     top: 10%;
