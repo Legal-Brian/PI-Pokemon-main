@@ -97,7 +97,7 @@ const Home = () => {
                         <option value="existing">Existing</option>
                     </select>
                 </div>
-                <Paginated currentPage={currentPage} pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
+                <Paginated currentPage={currentPage} pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated} />
                 <div>
                 {currentPokemons?.map(ele => {
                     return(
@@ -108,7 +108,7 @@ const Home = () => {
                         </div>
                 )})}
                 </div>
-                <Paginated currentPage={currentPage} pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated}/>
+                <Paginated currentPage={currentPage} pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated} />
             </div>
         </div>
     )
