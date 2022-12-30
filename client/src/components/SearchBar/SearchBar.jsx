@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNamePokemon } from "../../redux/actions/index";
 import style from "./SearchBar.module.css"
-import image from "../../images/SearchBar.png"
-import image2 from "../../images/SearchBar-i.png"
 
 const SearchBar = ({paginated}) => {
     const dispatch = useDispatch();
@@ -26,10 +24,6 @@ const SearchBar = ({paginated}) => {
 
     return (
         <form className={style.container} onSubmit={(e) => handleSubmit(e)}>
-            <div className={style.images}>
-                <img className={style.image} src={image}/>
-                <img className={style.image} src={image2}/>
-            </div>
             <div className={style.bar}>
                 <input className={style.searchText} type="text" placeholder="Search Pokemon..." value = {name} onChange={(e) => handleInputChange(e)}/>
                 <button type="submit" className={style.searchButton}>🔍</button>

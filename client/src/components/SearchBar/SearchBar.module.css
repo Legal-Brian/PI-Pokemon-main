@@ -6,13 +6,14 @@
 
 .container{
   margin: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background-color: #2D033B;
   border-radius: 80px;
   padding: 10px;
+  height: 250px;
+  background-image: url("../../images/SearchBar.png");
+  background-repeat: no-repeat;
+  background-position: 50% -20%;
+  background-size: 760px;
 }
 
 .images{
@@ -20,8 +21,10 @@
 }
 
 .bar{
+  position: absolute;
+  top: 45%;
+  left: 15%;
   display: flex;
-  justify-content: space-between;
   background:#C147E9;
   border-radius: 60px;
   margin-top: -4px;
