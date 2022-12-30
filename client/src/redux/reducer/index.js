@@ -55,7 +55,7 @@ const rootReducer = (state = inicialState, action) => {
                 pokemons: sortedName
             }
         case "ORDER_BY_ATTACK":
-            const sortedAttack = action.payload === "minor attack" ? state.pokemons.sort(function(a,b){
+            const sortedAttack = action.payload === "ascendant" ? state.pokemons.sort(function(a,b){
                 if (a.attack > b.attack){
                     return 1
                 }
@@ -77,7 +77,7 @@ const rootReducer = (state = inicialState, action) => {
                 pokemons: sortedAttack
             }
         case "ORDER_BY_ID":
-            const sortedId = action.payload === "minor id" ? state.pokemons.sort(function(a,b){
+            const sortedId = action.payload === "ascendant" ? state.pokemons.sort(function(a,b){
                 if (a.id > b.id){
                     return 1
                 }

@@ -1,12 +1,13 @@
 import React, { useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getPokemons, filterPokemonsByType, getTypes, filterCreated, orderByName, orderByAttack, orderById } from "../../redux/actions/index";
 import Card from "../../components/Card/Card";
 import Paginated from "../../components/Paginated/Paginated";
 import NavBar from "../../components/NavBar/NavBar";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import style from "./Home.module.css"
+import Sort from "../../components/Sort/Sort";
+import { getPokemons, getTypes, filterPokemonsByType, filterCreated, orderByName, orderByAttack, orderById } from "../../redux/actions/index";
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -30,6 +31,7 @@ const Home = () => {
     const handlerClick = (event) => {
         event.preventDefault();
         dispatch(getPokemons());
+        paginated(1)
     }
 
     const handleFilterType = (event) => {
@@ -47,58 +49,33 @@ const Home = () => {
     const [ordenByName, setOrdenByName] = useState("");
     const handleOrderedByName = (event) => {
         event.preventDefault();
-        dispatch(orderByName(event.target.value));
         paginated(1)
+        dispatch(orderByName(event.target.value));
         setOrdenByName(`Ordenado ${event.target.value}`)
     }
 
     const [ordenByAttack, setOrdenByAttack] = useState("");
     const handleOrderedByAttack = (event) => {
         event.preventDefault();
+        paginated(1)
         dispatch(orderByAttack(event.target.value));
-        paginated(1);
         setOrdenByAttack(`Ordenado ${event.target.value}`)
     }
 
     const [ordenById, setOrdenById] = useState("");
     const handleOrderedById = (event) => {
         event.preventDefault();
+        paginated(1)
         dispatch(orderById(event.target.value));
-        paginated(1);
         setOrdenById(`Ordenado ${event.target.value}`)
     }
-
+    
     return(
         <div>
             <NavBar></NavBar>
             <div className={style.container}>
                 <SearchBar paginated={paginated}/>
-                <div className={style.filters}>
-                    <button className={style.restore} onClick={e=>{handlerClick(e)}}>Restore</button>
-                    <select  className={style.select} onChange={e => handleOrderedById(e)}>
-                        <option value="minor id">Minor Id</option>
-                        <option value="biggest id">Biggest Id</option>
-                    </select>
-                    <select  className={style.select} onChange={e => handleOrderedByName(e)}>
-                        <option value="ascendant">Ascendant</option>
-                        <option value="descendant">Descendant</option>
-                    </select>
-                    <select  className={style.select} onChange={e => handleOrderedByAttack(e)}>
-                        <option value="biggest attack">Biggest Attack</option>
-                        <option value="minor attack">Minor Attack</option>
-                    </select>
-                    <select  className={style.select} onChange={e => handleFilterType(e)}>
-                        <option value="all">All</option>
-                        {allTypes?.map((ele) => (
-                        <option value={ele.name}>{ele.name[0].toUpperCase()+ele.name.slice(1)}</option>
-                        ))}
-                    </select>
-                    <select  className={style.select} onChange={e => handleFilterCreated(e)}>
-                        <option value="all">All</option>
-                        <option value="created">Created</option>
-                        <option value="existing">Existing</option>
-                    </select>
-                </div>
+                <Sort allTypes={allTypes} handlerClick={handlerClick} handleFilterType={handleFilterType} handleFilterCreated={handleFilterCreated} handleOrderedByName={handleOrderedByName} handleOrderedByAttack={handleOrderedByAttack} handleOrderedById={handleOrderedById} />
                 <Paginated currentPage={currentPage} pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} paginated={paginated} />
                 <div>
                 {currentPokemons?.map(ele => {
