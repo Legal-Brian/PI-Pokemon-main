@@ -60,7 +60,7 @@ const PokemonCreate = () => {
                 types: [],
             })
             alert("Pokemon created successfuly!");
-            history.push("/home")
+            history.push("/pokedex")
         } else{
             alert("Correct the error to create the Pokemon");
         }
