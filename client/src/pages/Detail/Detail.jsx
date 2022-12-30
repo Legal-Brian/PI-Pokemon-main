@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetails } from "../../redux/actions";
-import { Link } from "react-router-dom";
-import style from "./Detail.module.css"
 import NavBar from "../../components/NavBar/NavBar"
+import style from "./Detail.module.css"
 
 const Detail = (props) => {
     const dispatch = useDispatch();

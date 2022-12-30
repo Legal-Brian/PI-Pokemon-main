@@ -1,6 +1,6 @@
 import NavBar from "../../components/NavBar/NavBar";
-import style from "./Page404.module.css"
 import image from "../../images/404Icon.png"
+import style from "./Page404.module.css"
 
 const PageNotFound404 = () => {
   return (

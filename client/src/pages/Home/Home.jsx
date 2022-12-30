@@ -1,13 +1,13 @@
 import React, { useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Card from "../../components/Card/Card";
-import Paginated from "../../components/Paginated/Paginated";
+import { getPokemons, getTypes, filterPokemonsByType, filterCreated, orderByName, orderByAttack, orderById } from "../../redux/actions/index";
 import NavBar from "../../components/NavBar/NavBar";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import style from "./Home.module.css"
 import Sort from "../../components/Sort/Sort";
-import { getPokemons, getTypes, filterPokemonsByType, filterCreated, orderByName, orderByAttack, orderById } from "../../redux/actions/index";
+import Paginated from "../../components/Paginated/Paginated";
+import Card from "../../components/Card/Card";
+import style from "./Home.module.css"
 
 const Home = () => {
     const dispatch = useDispatch();

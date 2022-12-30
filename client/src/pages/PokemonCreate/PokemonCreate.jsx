@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postPokemon, getTypes } from "../../redux/actions";
 import { useHistory } from "react-router-dom";
-import validate from "./validate";
-import style from "./PokemonCreate.module.css";
+import { postPokemon, getTypes } from "../../redux/actions";
 import NavBar from "../../components/NavBar/NavBar"
+import validate from "./validate";
 import image from "../../images/Create.gif"
+import style from "./PokemonCreate.module.css";
 
 const PokemonCreate = () => {
     const dispatch = useDispatch();
