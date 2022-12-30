@@ -1,5 +1,5 @@
-const { Pokemon , Type } = require("../db");
 const fetch = require("node-fetch");
+const { Pokemon , Type } = require("../db");
 
 const getPokemonByName = async (name) => {
   try {
