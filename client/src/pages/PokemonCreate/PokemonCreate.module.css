@@ -173,64 +173,103 @@ input::-webkit-slider-thumb {
     border-radius: 20px;
 }
 
+.checkbox{
+  display: none;
+}
 
-#normal{
+.span:before{
+  content: "";
+  height: 40px;
+  width: 100px;
+  border-radius: 40px;
+  border: solid 3px red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+}
+
+.checkbox:checked + .span:before{
+  border: solid 3px green;
+}
+
+#normal:before{
+  content: "Normal";
     background: #828282 ;
   }
-  #grass{
+  #grass:before{
+    content: "Grass";
     background: #439937;
   }
-  #fire{
+  #fire:before{
+    content: "Fire";
     background: #e5613e;
   }
-  #water{
+  #water:before{
+    content: "Water";
     background: #309ae2;
   }
-  #electric{
+  #electric:before{
+    content: "Electric";
     background: #e0bd28;
   }
-  #rock{
+  #rock:before{
+    content: "Rock";
     background: #aaa581;
   }
-  #fighting{
+  #fighting:before{
+    content: "Fighting";
     background: #e5613e;
   }
-  #psychic{
+  #psychic:before{
+    content: "Psychic";
     background: #ea6c8d;
   }
-  #ghost{
+  #ghost:before{
+    content: "Ghost";
     background: #6f4570;
   }
-  #poison{
+  #poison:before{
+    content: "Poison";
     background: #9454cc;
   }
-  #flying{
+  #flying:before{
+    content: "Flying";
     background: #74abd1;
   }
-  #ground{
+  #ground:before{
+    content: "Ground";
     background: #a5733c;
   }
-  #dragon{
+  #dragon:before{
+    content: "Dragon";
     background: #576fbd;
   }
-  #ice{
+  #ice:before{
+    content: "Ice";
     background: #47c9c9;
   }
-  #bug{
+  #bug:before{
+    content: "Bug";
     background: #a0a028;
   }
-  #steel{
+  #steel:before{
+    content: "Steel";
     background: #6badc9;
   }
-  #dark{
+  #dark:before{
+    content: "Dark";
     background: #4f4747;
   }
-  #fairy{
+  #fairy:before{
+    content: "Fairy";
     background: #e28de2;
   }
-  #shadow{
+  #shadow:before{
+    content: "Shadow";
     background: #000000;
   }
-  #unknown{
+  #unknown:before{
+    content: "Unknown";
     background: #68a090;
   }

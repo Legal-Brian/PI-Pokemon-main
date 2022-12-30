@@ -144,11 +144,10 @@ const PokemonCreate = () => {
                     <label>Type(s): </label> 
                     <div> 
                         {types.map( type => (
-                            <div className={style.types} id={style[type.name]}>
-                                <label> 
-                                <span>{type.name[0].toUpperCase().concat(type.name.slice(1))}</span>
-                                <input type="checkbox" value={type.name} onChange={(e) => handleChecked(e)}>
-                                </input>
+                            <div className={style.types}>
+                                <label className={style.label}>
+                                <input className={style.checkbox} id="active"type="checkbox" value={type.name} onChange={(e) => handleChecked(e)}/>
+                                <span className={style.span} id={style[type.name]} for="active"></span>
                                 </label>
                             </div>
                         ))}    
